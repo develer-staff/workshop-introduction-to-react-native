@@ -9,6 +9,7 @@ import {
   Image,
   TouchableOpacity,
   Linking,
+  ActivityIndicator,
 } from 'react-native';
 
 
@@ -16,29 +17,26 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
 
-    // Prepare data
-    const data = [
-      { name: 'John Doe 1', email: 'jdoe@gmail.com', phone: '3333333333' },
-      { name: 'John Doe 2', email: 'jdoe@gmail.com', phone: '3333333333' },
-      { name: 'John Doe 3', email: 'jdoe@gmail.com', phone: '3333333333' },
-      { name: 'John Doe 4', email: 'jdoe@gmail.com', phone: '3333333333' },
-      { name: 'John Doe 5', email: 'jdoe@gmail.com', phone: '3333333333' },
-      { name: 'John Doe 6', email: 'jdoe@gmail.com', phone: '3333333333' },
-      { name: 'John Doe 7', email: 'jdoe@gmail.com', phone: '3333333333' },
-      { name: 'John Doe 8', email: 'jdoe@gmail.com', phone: '3333333333' },
-      { name: 'John Doe 9', email: 'jdoe@gmail.com', phone: '3333333333' },
-      { name: 'John Doe 10', email: 'jdoe@gmail.com', phone: '3333333333' },
-    ];
-
-    // Initialize list datasource
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-
     // Initialize component state
     this.state = {
-      dataSource: ds.cloneWithRows(data),
+      ds: new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 }),
+      dataSource: null,
+      dataReady: false,
     };
 
     this.renderRow = this.renderRow.bind(this);
+  }
+
+
+  componentWillMount() {
+    fetch('https://tinyurl.com/znhzspm')
+      .then((data) => data.json())
+      .then((jsonData) => {
+        this.setState({
+          dataSource: this.state.ds.cloneWithRows(jsonData),
+          dataReady: true
+        })
+      })
   }
 
 
@@ -47,17 +45,17 @@ export default class Home extends Component {
       <View style={styles.rowView}>
 
         <Image style={styles.imgView}
-               source={{uri: 'https://tinyurl.com/z2bffag'}} />
+               source={{uri: rowData[1]}} />
 
         <View style={styles.infoView}>
-          <Text style={styles.rowText}>{rowData.name}</Text>
+          <Text style={styles.rowText}>{rowData[0]}</Text>
 
-          <TouchableOpacity onPress={() => Linking.openURL(`tel:${rowData.phone}`)}>
-            <Text style={styles.linkText}>{rowData.phone}</Text>
+          <TouchableOpacity onPress={() => Linking.openURL(`tel:${rowData[2]}`)}>
+            <Text style={styles.linkText}>{rowData[2]}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => Linking.openURL(`mailto:${rowData.email}`)}>
-            <Text style={styles.linkText}>{rowData.email}</Text>
+          <TouchableOpacity onPress={() => Linking.openURL(`mailto:${rowData[3]}`)}>
+            <Text style={styles.linkText}>{rowData[3]}</Text>
           </TouchableOpacity>
 
         </View>
@@ -67,7 +65,16 @@ export default class Home extends Component {
   }
 
 
-  render() {
+  renderLoadingState() {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator />
+      </View>
+    );
+  }
+
+
+  renderReadyState() {
     return (
       <View style={styles.container}>
 
@@ -81,6 +88,14 @@ export default class Home extends Component {
                   />
       </View>
     );
+  }
+
+
+  render() {
+    if (this.state.dataReady)
+      return this.renderReadyState();
+
+    return this.renderLoadingState();
   }
 }
 
@@ -126,5 +141,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Arial',
     fontSize: 16,
     color: '#0000FF',
+  },
+  loadingContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
