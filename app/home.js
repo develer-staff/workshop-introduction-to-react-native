@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
-import { View, ListView, Text, StyleSheet, Platform, Image } from 'react-native';
+
+import {
+  View,
+  ListView,
+  Text,
+  StyleSheet,
+  Platform,
+  Image,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
 
 
 export default class Home extends Component {
@@ -41,8 +51,12 @@ export default class Home extends Component {
 
         <View style={styles.infoView}>
           <Text style={styles.rowText}>{rowData.name}</Text>
-          <Text style={styles.rowText}>{rowData.phone}</Text>
-          <Text style={styles.rowText}>{rowData.email}</Text>
+          <Text style={styles.linkText}>{rowData.phone}</Text>
+
+          <TouchableOpacity onPress={() => Linking.openURL(`mailto:${rowData.email}`)}>
+            <Text style={styles.linkText}>{rowData.email}</Text>
+          </TouchableOpacity>
+
         </View>
 
       </View>
@@ -104,5 +118,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Arial',
     fontSize: 16,
     color: '#777777',
+  },
+  linkText: {
+    fontFamily: 'Arial',
+    fontSize: 16,
+    color: '#0000FF',
   },
 });
