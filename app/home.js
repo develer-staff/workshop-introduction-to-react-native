@@ -51,7 +51,10 @@ export default class Home extends Component {
 
         <View style={styles.infoView}>
           <Text style={styles.rowText}>{rowData.name}</Text>
-          <Text style={styles.linkText}>{rowData.phone}</Text>
+
+          <TouchableOpacity onPress={() => Linking.openURL(`tel:${rowData.phone}`)}>
+            <Text style={styles.linkText}>{rowData.phone}</Text>
+          </TouchableOpacity>
 
           <TouchableOpacity onPress={() => Linking.openURL(`mailto:${rowData.email}`)}>
             <Text style={styles.linkText}>{rowData.email}</Text>
