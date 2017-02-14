@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Platform.OS === 'ios' ? 22 : 0,
+    backgroundColor: 'white',
   },
   titleView: {
     padding: 20,
