@@ -19,6 +19,15 @@ export default class Home extends Component {
     this.state = {
       dataSource: ds.cloneWithRows(data),
     };
+
+    this.renderRow = this.renderRow.bind(this);
+  }
+
+
+  renderRow(rowData) {
+    return (
+      <Text>{rowData}</Text>
+    );
   }
 
 
@@ -32,7 +41,7 @@ export default class Home extends Component {
 
         <ListView style={styles.listView}
                   dataSource={this.state.dataSource}
-                  renderRow={(rowData) => <Text>{rowData}</Text>}
+                  renderRow={this.renderRow}
                   />
       </View>
     );
