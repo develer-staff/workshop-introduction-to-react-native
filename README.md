@@ -25,8 +25,8 @@ L'obiettivo dello step è eseguire con successo l' "hello world" di React Native
   
   *Git command:* `git checkout step-1`
 
-<img src="https://www.dropbox.com/s/tkchpvbdwhyh8mj/step-1-android.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
-<img src="https://www.dropbox.com/s/fks2v7srnjayuvt/step-1-ios.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-1/step-1-android.png" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-1/step-1-ios.png" width="250" style="border: 1px solid #AAAAAA" />
 
 Argomenti toccati:  
 
@@ -51,8 +51,8 @@ L'obiettivo dello step è implementare il layout della home page dell'app.
 
 *Git command:* `git checkout step-2`
 
-<img src="https://www.dropbox.com/s/lneo8olmtpj8yjo/step-2-android.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
-<img src="https://www.dropbox.com/s/1dvzkg4zlr39gvp/step-2-ios.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-2/step-2-android.png" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-2/step-2-ios.png" width="250" style="border: 1px solid #AAAAAA" />
 
 Argomenti toccati:
 
@@ -66,8 +66,8 @@ L'obiettivo dello step è utilizzare il componente `ListView` di React Native pe
 
 *Git command:* `git checkout step-3`
 
-<img src="https://www.dropbox.com/s/7ybi0izxxtrk01b/step-3-android.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
-<img src="https://www.dropbox.com/s/w2f4t10krt8z5l5/step-3-ios.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-3/step-3-android.png" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-3/step-3-ios.png" width="250" style="border: 1px solid #AAAAAA" />
 
 Argomenti toccati:
 
@@ -79,8 +79,8 @@ L'obiettivo dello step è costruire il layout finale per il singolo contatto nel
 
 *Git command:* `git checkout step-4`
 
-<img src="https://www.dropbox.com/s/89800d3c8hz8kzk/step-4-android.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
-<img src="https://www.dropbox.com/s/gbh2he477jpamsz/step-4-ios.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-4/step-4-android.png" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-4/step-4-ios.png" width="250" style="border: 1px solid #AAAAAA" />
 
 Argomenti toccati:
 
@@ -92,8 +92,8 @@ L'obiettivo dello step è mostrare l'immagine profilo degli utenti e rendere cli
 
 *Git commmand:* `git checkout step-5`
 
-<img src="https://www.dropbox.com/s/j8qg2yxvib2u663/step-5-android.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
-<img src="https://www.dropbox.com/s/mo72xnukyxi0dxs/step-5-ios.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-5/step-5-android.png" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-5/step-5-ios.png" width="250" style="border: 1px solid #AAAAAA" />
 
 Argomenti toccati:
 
@@ -105,8 +105,8 @@ L'obiettivo dello step è recuperare la lista di contatti da server.
 
 *Git command:* `git checkout step-6`
 
-<img src="https://www.dropbox.com/s/xvaecf5byibwrj5/step-6-android.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
-<img src="https://www.dropbox.com/s/agp3c00c97v39qe/step-6-ios.png?raw=1" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-6/step-6-android.png" width="250" style="border: 1px solid #AAAAAA" />
+<img src="readme-files/step-6/step-6-ios.png" width="250" style="border: 1px solid #AAAAAA" />
 
 * GET e POST request con il costrutto "fetch"
 * Promises ES6
