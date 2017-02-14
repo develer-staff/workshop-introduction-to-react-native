@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Platform } from 'react-native';
+import { View, ListView, Text, StyleSheet, Platform } from 'react-native';
 
 
 export default class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    // Prepare data
+    const data = [
+      'Row 1', 'Row 2', 'Row 3', 'Row 4', 'Row 5',
+      'Row 6', 'Row 7', 'Row 8', 'Row 9', 'Row 10',
+    ];
+
+    // Initialize list datasource
+    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+
+    // Initialize component state
+    this.state = {
+      dataSource: ds.cloneWithRows(data),
+    };
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
@@ -11,10 +30,10 @@ export default class Home extends Component {
           <Text style={styles.titleText}>Home Title</Text>
         </View>
 
-        <View style={styles.contentView}>
-          <Text style={styles.contentText}>Home Content</Text>
-        </View>
-
+        <ListView style={styles.listView}
+                  dataSource={this.state.dataSource}
+                  renderRow={(rowData) => <Text>{rowData}</Text>}
+                  />
       </View>
     );
   }
@@ -35,11 +54,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
   },
-  contentView: {
+  listView: {
     flex: 1,
     padding: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   contentText: {
     fontFamily: 'Arial',
