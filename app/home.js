@@ -91,15 +91,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   imgView: {
-    borderWidth: 1,
-    borderColor: 'green',
     width: 80,
     height: 80,
   },
   infoView: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: 'red',
     paddingLeft: 10,
     justifyContent: 'center',
   },
