@@ -47,7 +47,7 @@ export default class Home extends Component {
       <View style={styles.rowView}>
 
         <Image style={styles.imgView}
-               source={{uri: 'https://tinyurl.com/je4mbgy'}} />
+               source={{uri: 'https://tinyurl.com/z2bffag'}} />
 
         <View style={styles.infoView}>
           <Text style={styles.rowText}>{rowData.name}</Text>
