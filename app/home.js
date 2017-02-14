@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ListView, Text, StyleSheet, Platform } from 'react-native';
+import { View, ListView, Text, StyleSheet, Platform, Image } from 'react-native';
 
 
 export default class Home extends Component {
@@ -36,8 +36,8 @@ export default class Home extends Component {
     return (
       <View style={styles.rowView}>
 
-        <View style={styles.imgView}>
-        </View>
+        <Image style={styles.imgView}
+               source={{uri: 'https://tinyurl.com/je4mbgy'}} />
 
         <View style={styles.infoView}>
           <Text style={styles.rowText}>{rowData.name}</Text>
