@@ -26,7 +26,9 @@ export default class Home extends Component {
 
   renderRow(rowData) {
     return (
-      <Text>{rowData}</Text>
+      <View style={styles.rowView}>
+        <Text style={styles.rowText}>{rowData}</Text>
+      </View>
     );
   }
 
@@ -67,7 +69,11 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
-  contentText: {
+  rowView: {
+    borderWidth: 1,
+    borderColor: 'red',
+  },
+  rowText: {
     fontFamily: 'Arial',
     fontSize: 16,
     color: '#777777',
