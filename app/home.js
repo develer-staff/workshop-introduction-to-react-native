@@ -8,8 +8,16 @@ export default class Home extends Component {
 
     // Prepare data
     const data = [
-      'Row 1', 'Row 2', 'Row 3', 'Row 4', 'Row 5',
-      'Row 6', 'Row 7', 'Row 8', 'Row 9', 'Row 10',
+      { name: 'John Doe 1', email: 'jdoe@gmail.com', phone: '3333333333' },
+      { name: 'John Doe 2', email: 'jdoe@gmail.com', phone: '3333333333' },
+      { name: 'John Doe 3', email: 'jdoe@gmail.com', phone: '3333333333' },
+      { name: 'John Doe 4', email: 'jdoe@gmail.com', phone: '3333333333' },
+      { name: 'John Doe 5', email: 'jdoe@gmail.com', phone: '3333333333' },
+      { name: 'John Doe 6', email: 'jdoe@gmail.com', phone: '3333333333' },
+      { name: 'John Doe 7', email: 'jdoe@gmail.com', phone: '3333333333' },
+      { name: 'John Doe 8', email: 'jdoe@gmail.com', phone: '3333333333' },
+      { name: 'John Doe 9', email: 'jdoe@gmail.com', phone: '3333333333' },
+      { name: 'John Doe 10', email: 'jdoe@gmail.com', phone: '3333333333' },
     ];
 
     // Initialize list datasource
@@ -27,7 +35,16 @@ export default class Home extends Component {
   renderRow(rowData) {
     return (
       <View style={styles.rowView}>
-        <Text style={styles.rowText}>{rowData}</Text>
+
+        <View style={styles.imgView}>
+        </View>
+
+        <View style={styles.infoView}>
+          <Text style={styles.rowText}>{rowData.name}</Text>
+          <Text style={styles.rowText}>{rowData.phone}</Text>
+          <Text style={styles.rowText}>{rowData.email}</Text>
+        </View>
+
       </View>
     );
   }
@@ -38,7 +55,7 @@ export default class Home extends Component {
       <View style={styles.container}>
 
         <View style={styles.titleView}>
-          <Text style={styles.titleText}>Home Title</Text>
+          <Text style={styles.titleText}>Contacts List</Text>
         </View>
 
         <ListView style={styles.listView}
@@ -70,8 +87,21 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   rowView: {
+    flexDirection: 'row',
+    marginBottom: 20,
+  },
+  imgView: {
+    borderWidth: 1,
+    borderColor: 'green',
+    width: 80,
+    height: 80,
+  },
+  infoView: {
+    flex: 1,
     borderWidth: 1,
     borderColor: 'red',
+    paddingLeft: 10,
+    justifyContent: 'center',
   },
   rowText: {
     fontFamily: 'Arial',
